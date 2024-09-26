@@ -3,7 +3,7 @@
 <package format="3">
   <name>ur3_vacuum_gripper</name>
   <version>0.0.1</version>
-  <description>Attaching the vacuum gripper to the UR3 (Metapackage)</description>
+  <description>Combines the vacuum gripper to the UR3 (Metapackage)</description>
   <maintainer email="jcorredorc@github.com">Javier Corredor</maintainer>
   <license>BSD-3-Clause</license>
 

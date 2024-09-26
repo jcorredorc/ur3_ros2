@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(ur3_vacuum_gripper_description)
+project(vacuum_gripper_description)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -10,12 +10,16 @@ find_package(ament_cmake REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
-find_package(ur_description REQUIRED)
-find_package(ur3_vacuum_gripper_description REQUIRED)
+#find_package(ur_description REQUIRED)
+#find_package(urdf_launch REQUIRED)
+find_package(rclpy REQUIRED)
+find_package(xacro REQUIRED)  # Necesario para procesar Xacro
+# find_package(launch REQUIRED)  # Necesario para usar archivos de lanzamiento
+# find_package(launch_ros REQUIRED)
 
 # Copy necessary files to designated locations in the project
 install (
-  DIRECTORY urdf 
+  DIRECTORY urdf meshes launch rviz 
   DESTINATION share/${PROJECT_NAME}
 )
 
@@ -30,7 +34,7 @@ if(BUILD_TESTING)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
   install(
-  DIRECTORY launch urdf
+  DIRECTORY urdf meshes launch rviz
   DESTINATION share/${PROJECT_NAME}
 )
 endif()

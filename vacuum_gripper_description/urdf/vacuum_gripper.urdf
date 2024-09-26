@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<robot name="vacuum_gripper">
+      <!-- Create a fixed joint with a parameterized name. -->
+      <link name="base_link">
+      <visual>
+        <geometry>
+          <!-- The path to the visual meshes in the package. -->
+          <mesh filename="package://ur3_vacuum_gripper_description/meshes/vacuum_gripper.dae"/>
+          <!-- <mesh filename="package://ur3_vacuum_gripper_description/meshes/Proyecto.stl"/> -->
+
+          <!-- <cylinder length="0.06" radius="0.03"/>  -->
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <!-- The path to the collision meshes in the package. -->
+          <!-- <mesh filename="package://ur5_with_measurement_tool/meshes/collision/vacuum_gripper.stl"/> -->
+          <cylinder length="0.06" radius="0.03"/> 
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- TCP frame -->
+    <joint name="tcp_joint" type="fixed">
+      <origin xyz="0 0 0.116" rpy="0 0 0"/>
+      <parent link="base_link"/>
+      <child link="tcp"/>
+    </joint>
+    <link name="tcp"/>
+</robot>
