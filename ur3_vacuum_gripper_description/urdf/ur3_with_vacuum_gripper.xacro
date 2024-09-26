@@ -4,7 +4,7 @@
   <!-- Ur3 -->
   <xacro:include filename="$(find ur_description)/urdf/ur3.urdf.xacro" />
   <!-- end-effector -->
-  <xacro:include filename="vacuum_gripper.xacro" />
+  <xacro:include filename="$(find vacuum_gripper_description)vacuum_gripper.xacro" />
 
   <!-- Ur3 -->
   <!-- The Ur3 xacro must be included with passing parameters -->
